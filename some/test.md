@@ -1,5 +1,5 @@
 ---
-title: Home
-layout: home
+title: Test
+layout: some
 ---
 Hi Test  
