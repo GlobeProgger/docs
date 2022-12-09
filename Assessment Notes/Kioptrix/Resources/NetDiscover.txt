@@ -1,0 +1,11 @@
+ Currently scanning: Finished!   |   Screen View: Unique Hosts               
+                                                                             
+ 8 Captured ARP Req/Rep packets, from 4 hosts.   Total size: 480             
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 10.0.2.1        52:54:00:12:35:00      2     120  Unknown vendor            
+ 10.0.2.2        52:54:00:12:35:00      2     120  Unknown vendor            
+ 10.0.2.3        08:00:27:f0:c8:18      2     120  PCS Systemtechnik GmbH    
+ 10.0.2.4        08:00:27:3a:2d:da      2     120  PCS Systemtechnik GmbH    
+
