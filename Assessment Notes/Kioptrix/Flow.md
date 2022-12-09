@@ -1,3 +1,11 @@
+---
+layout: default
+title: Flow
+parent: Assessment-Notes
+has_children: true
+nav_order: 2
+---
+
 # Flow
 - [Flow](#flow)
   - [1 Scanning \& Enummeration](#1-scanning--enummeration)
@@ -18,31 +26,31 @@
 ```console 
 sudo netdiscover -r 10.0.2.0/24
 ```
-[NetDiscover results](Resources/NetDiscover.txt)
+[NetDiscover results](assets/NetDiscover.txt)
 
 ### 1.2 NMap
 ``` console
 sudo nmap -T4 -p- -A 10.0.2.4
 ```
-[nmap tcp scan](Resources/nmap%20tcp.txt)  
+[nmap tcp scan](assets/nmap%20tcp.txt)  
 
 ```console
 sudo nmap -T4 -sU 10.0.2.4 
 ```
-[nmap upd scan](Resources/nmap%20udp.txt)
+[nmap upd scan](assets/nmap%20udp.txt)
 
 ### 1.3 Nikto
 ```console
 nikto -h http://10.0.2.4
 ```
-[nikto results](Resources/nikto.txt)
+[nikto results](assets/nikto.txt)
 
 ### 1.4 DirBuster 
 - Use GET requests only
 - Go Faster
 - wordlist: "/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt"
   
-![alt](Resources/dirBuster.png)
+![alt](assets/dirBuster.png)
 
 ### 1.5 Metaspliot
 - search for "smb/smb_version"
@@ -55,8 +63,8 @@ info                // get infos on how to use the module
 set RHOST 10.0.2.4  // set the host (target)
 run                 // run the module
 ```
-![](Resources/msf_01.png)
-![](Resources/msf_02.png)
+![](assets/msf_01.png)
+![](assets/msf_02.png)
 
 ### 1.6 smbclient
 
@@ -65,7 +73,7 @@ smbclient -L \\\\10.0.2.4\\
 ```
 -L : List services
 
-![](Resources/smb_1.png)
+![](assets/smb_1.png)
 
 > 2 hares found!
 
@@ -73,7 +81,7 @@ smbclient -L \\\\10.0.2.4\\
 smbclient -L \\\\10.0.2.4\\ADMIN$
 ```
 
-![](Resources/smb_2.png)
+![](assets/smb_2.png)
 ```console
 smbclient -L \\\\10.0.2.4\\IPC$
 ```
@@ -82,7 +90,7 @@ smbclient -L \\\\10.0.2.4\\IPC$
 ```console
 ls
 ```
-![](Resources/smb_3.png)
+![](assets/smb_3.png)
 > Network access denied... damn
 
 ### 1.7 ssh
@@ -101,7 +109,7 @@ ssh 10.0.2.4 -oKexAlgorithms=+diffie-hellman-group1-sha1
 Unable to negotiate with 10.0.2.4 port 22: no matching host key type found. Their offer: ssh-rsa,ssh-dss
 
 ```
-![alt](Resources/rJBwk0u.png)
+![alt](assets/rJBwk0u.png)
 
 > After fix
 
@@ -131,4 +139,3 @@ searchsploit Samba 2.2.1a
 searchsploit mod_ssl 2.8.4
 ```
 ---
-[Back](README.md)
