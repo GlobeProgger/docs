@@ -2,10 +2,14 @@
 layout: default
 title: Flow
 parent: Kioptrix
+grand_parent: Assessment Notes
+permalink: /docs/assessment-notes/kioptrix/flow
 nav_order: 2
+
 ---
 
 # Flow
+
 - [Flow](#flow)
   - [1 Scanning \& Enummeration](#1-scanning--enummeration)
     - [1.1 NetDiscover](#11-netdiscover)

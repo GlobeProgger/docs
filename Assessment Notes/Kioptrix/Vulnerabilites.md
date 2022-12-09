@@ -2,8 +2,9 @@
 layout: default
 title: Vulnerabilites
 parent: Kioptrix
-has_children: false
+grand_parent: Assessment Notes
 nav_order: 3
+permalink: /docs/assessment-notes/kioptrix/vulnerabilities
 ---
 
 # Vulnerabilites
