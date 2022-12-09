@@ -2,10 +2,8 @@
 layout: default
 title: Notes
 parent: Kioptrix
-has_children: false
 nav_order: 1
 ---
-
 
 # Notes
 - 80/443 - 10.0.2.4

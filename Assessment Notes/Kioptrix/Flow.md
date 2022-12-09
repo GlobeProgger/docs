@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Flow
-parent: Assessment-Notes
-has_children: true
+parent: Kioptrix
 nav_order: 2
 ---
 
