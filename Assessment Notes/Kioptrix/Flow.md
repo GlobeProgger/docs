@@ -3,7 +3,7 @@ layout: default
 title: Flow
 parent: Kioptrix
 grand_parent: Assessment Notes
-permalink: /docs/assessment-notes/kioptrix/flow
+permalink: /assessment-notes/kioptrix/flow
 nav_order: 2
 
 ---

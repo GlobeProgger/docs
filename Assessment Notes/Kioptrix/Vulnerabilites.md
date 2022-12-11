@@ -4,7 +4,7 @@ title: Vulnerabilites
 parent: Kioptrix
 grand_parent: Assessment Notes
 nav_order: 3
-permalink: /docs/assessment-notes/kioptrix/vulnerabilities
+permalink: /assessment-notes/kioptrix/vulnerabilities
 ---
 
 # Vulnerabilites

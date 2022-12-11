@@ -3,7 +3,7 @@ layout: default
 title: Kioptrix
 has_children: true
 parent: Assessment Notes
-permalink: /docs/assessment-notes/kioptrix
+permalink: /assessment-notes/kioptrix
 ---
 
 # Kioptrix

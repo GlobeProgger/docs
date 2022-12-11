@@ -4,7 +4,7 @@ title: Notes
 parent: Kioptrix
 nav_order: 1
 grand_parent: Assessment Notes
-permalink: /docs/assessment-notes/kioptrix/notes
+permalink: /assessment-notes/kioptrix/notes
 ---
 
 # Notes
