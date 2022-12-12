@@ -34,7 +34,7 @@ See:
 - PHP v7.4.30
 
 ## serchsploit 
-![searchspliot results](../../assets/TryHackMe/searchsploit_laravel8.jpg)
+![searchspliot results](../../assets/TryHackMe/DockTheHalls/searchsploit_laravel8.jpg)
 
 ## Metaspliot Framework Console
 
@@ -304,3 +304,5 @@ uid=0(root) gid=0(root) groups=0(root)
 ```
 
 > WE ARE ROOT
+
+---
