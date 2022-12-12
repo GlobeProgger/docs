@@ -2,8 +2,8 @@
 layout: default
 title: Kioptrix
 has_children: true
-parent: Assessment Notes
-permalink: /assessment-notes/kioptrix
+parent: TCM-Sec - PEH
+permalink: /tcm-sec_PEH/kioptrix
 ---
 
 # Kioptrix
