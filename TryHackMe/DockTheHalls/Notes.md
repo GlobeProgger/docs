@@ -9,6 +9,20 @@ permalink: /tcm-sec_PEH/kioptrix/notes
 
 # Notes
 
+- [Notes](#notes)
+  - [nmap](#nmap)
+  - [Browser](#browser)
+  - [serchsploit](#serchsploit)
+  - [Metaspliot Framework Console](#metaspliot-framework-console)
+  - [Time to get to that Postgres DB](#time-to-get-to-that-postgres-db)
+  - [Now we need to scan the docker host](#now-we-need-to-scan-the-docker-host)
+    - [Either](#either)
+    - [OR: Use SOCKS Proxy](#or-use-socks-proxy)
+  - [Proxychains](#proxychains)
+  - [Either](#either-1)
+    - [Using proxychains](#using-proxychains)
+    - [Or Metasploit](#or-metasploit)
+
 ## nmap
 
 ```console
