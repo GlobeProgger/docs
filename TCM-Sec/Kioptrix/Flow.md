@@ -7,10 +7,11 @@ permalink: /tcm-sec_PEH/kioptrix/flow
 nav_order: 2
 ---
 
-# Flow
+
+# Flow <!-- markdownlint-disable-line MD025 MD022 -->
 {: .no_toc}
 
-## Table of contents
+## Table of contents <!-- markdownlint-disable-line MD022 -->
 {: .no_toc .text-delta}
 
 - TOC
@@ -19,28 +20,37 @@ nav_order: 2
 ## Scanning & Enummeration
 
 ### NetDiscover
-```console 
+
+```console
 sudo netdiscover -r 10.0.2.0/24
 ```
+
 [NetDiscover results](../../assets/TCM-Sec/Kioptrix/NetDiscover.txt)
+
 ### NMap
+
 ``` console
 sudo nmap -T4 -p- -A 10.0.2.4
 ```
+
 [nmap tcp scan](../../assets/TCM-Sec/Kioptrix/nmap%20tcp.txt)  
 
 ```console
 sudo nmap -T4 -sU 10.0.2.4 
 ```
+
 [nmap upd scan](../../assets/TCM-Sec/Kioptrix/nmap%20udp.txt)
 
 ### Nikto
+
 ```console
 nikto -h http://10.0.2.4
 ```
+
 [nikto results](../../assets/TCM-Sec/Kioptrix/nikto.txt)
 
-### DirBuster 
+### DirBuster
+
 - Use GET requests only
 - Go Faster
 - wordlist: "/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt"
@@ -71,14 +81,14 @@ List smb services
 smbclient -L \\\\10.0.2.4\\
 ```
 
-### Flags
+### Flags  <!-- markdownlint-disable-line MD022 -->
 {: .no_toc}
 
 ```console
 -L : List services
 ```
 
-### Findings
+### Findings  <!-- markdownlint-disable-line MD022 -->
 {: .no_toc}
 
 ![smb 1](../../assets/TCM-Sec/Kioptrix/smb_1.png)
@@ -121,7 +131,6 @@ ssh 10.0.2.4 -oKexAlgorithms=+diffie-hellman-group1-sha1
 
 ```console
 Unable to negotiate with 10.0.2.4 port 22: no matching host key type found. Their offer: ssh-rsa,ssh-dss
-
 ```
 
 ![alt](../../assets/TCM-Sec/Kioptrix/rJBwk0u.png)
@@ -135,9 +144,9 @@ This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '10.0.2.4' (RSA) to the list of known hosts.
 kali@10.0.2.4's password: 
-
 ```
-> No banner with further infos sadly
+
+> No banner with further infos, sadly
 
 ## Research
 

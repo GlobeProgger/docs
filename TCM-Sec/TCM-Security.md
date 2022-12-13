@@ -5,6 +5,8 @@ nav_order: 2
 has_children: true
 permalink: /tcm-sec_PEH
 ---
+<!-- markdownlint-disable MD022 -->
+<!-- markdownlint-disable MD025 -->
 
 # TCM-Sec: Practical Ethical Hacking
 

@@ -6,6 +6,8 @@ nav_order: 1
 grand_parent: TCM-Sec - PEH
 permalink: /tcm-sec_PEH/kioptrix/notes
 ---
+<!-- markdownlint-disable MD022 -->
+<!-- markdownlint-disable MD025 -->
 
 # Notes
 
