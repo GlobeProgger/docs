@@ -8,28 +8,22 @@ nav_order: 2
 ---
 
 # Flow
+{: .no_toc}
 
-- [Flow](#flow)
-  - [1 Scanning \& Enummeration](#1-scanning--enummeration)
-    - [1.1 NetDiscover](#11-netdiscover)
-    - [1.2 NMap](#12-nmap)
-    - [1.3 Nikto](#13-nikto)
-    - [1.4 DirBuster](#14-dirbuster)
-    - [1.5 Metaspliot](#15-metaspliot)
-    - [1.6 smbclient](#16-smbclient)
-    - [1.7 ssh](#17-ssh)
-  - [2. Research](#2-research)
-    - [2.1 google](#21-google)
-    - [2.2 searchspliot](#22-searchspliot)
+## Table of contents
+{: .no_toc .text-delta}
 
-## 1 Scanning & Enummeration
+- TOC
+{:toc }
 
-### 1.1 NetDiscover
+## Scanning & Enummeration
+
+### NetDiscover
 ```console 
 sudo netdiscover -r 10.0.2.0/24
 ```
 [NetDiscover results](../../assets/TCM-Sec/Kioptrix/NetDiscover.txt)
-### 1.2 NMap
+### NMap
 ``` console
 sudo nmap -T4 -p- -A 10.0.2.4
 ```
@@ -40,20 +34,21 @@ sudo nmap -T4 -sU 10.0.2.4
 ```
 [nmap upd scan](../../assets/TCM-Sec/Kioptrix/nmap%20udp.txt)
 
-### 1.3 Nikto
+### Nikto
 ```console
 nikto -h http://10.0.2.4
 ```
 [nikto results](../../assets/TCM-Sec/Kioptrix/nikto.txt)
 
-### 1.4 DirBuster 
+### DirBuster 
 - Use GET requests only
 - Go Faster
 - wordlist: "/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt"
   
 ![alt](../../assets/TCM-Sec/Kioptrix/dirBuster.png)
 
-### 1.5 Metaspliot
+### Metaspliot
+
 - search for "smb/smb_version"
 
 ``` console
@@ -64,17 +59,29 @@ info                // get infos on how to use the module
 set RHOST 10.0.2.4  // set the host (target)
 run                 // run the module
 ```
-![](../../assets/TCM-Sec/Kioptrix/msf_01.png)
-![](../../assets/TCM-Sec/Kioptrix/msf_02.png)
 
-### 1.6 smbclient
+![msfc 1](../../assets/TCM-Sec/Kioptrix/msf_01.png)
+![msfc 2](../../assets/TCM-Sec/Kioptrix/msf_02.png)
+
+### smbclient
+
+List smb services
 
 ```console
 smbclient -L \\\\10.0.2.4\\
 ```
--L : List services
 
-![](../../assets/TCM-Sec/Kioptrix/smb_1.png)
+### Flags
+{: .no_toc}
+
+```console
+-L : List services
+```
+
+### Findings
+{: .no_toc}
+
+![smb 1](../../assets/TCM-Sec/Kioptrix/smb_1.png)
 
 > 2 hares found!
 
@@ -82,34 +89,41 @@ smbclient -L \\\\10.0.2.4\\
 smbclient -L \\\\10.0.2.4\\ADMIN$
 ```
 
-![](../../assets/TCM-Sec/Kioptrix/smb_2.png)
+![smb 2](../../assets/TCM-Sec/Kioptrix/smb_2.png)
+
 ```console
 smbclient -L \\\\10.0.2.4\\IPC$
 ```
+
 > Sucess!!!
 
 ```console
 ls
 ```
-![](../../assets/TCM-Sec/Kioptrix/smb_3.png)
+
+![smb 3](../../assets/TCM-Sec/Kioptrix/smb_3.png)
+
 > Network access denied... damn
 
-### 1.7 ssh
+### ssh
 
 ```console
 ssh 10.0.2.4
 ```
+
 ```console
 Unable to negotiate with 10.0.2.4 port 22: no matching key exchange method found. Their offer: diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
-
 ```
+
 ```console
 ssh 10.0.2.4 -oKexAlgorithms=+diffie-hellman-group1-sha1
 ```
+
 ```console
 Unable to negotiate with 10.0.2.4 port 22: no matching host key type found. Their offer: ssh-rsa,ssh-dss
 
 ```
+
 ![alt](../../assets/TCM-Sec/Kioptrix/rJBwk0u.png)
 
 > After fix
@@ -121,17 +135,19 @@ This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '10.0.2.4' (RSA) to the list of known hosts.
 kali@10.0.2.4's password: 
+
 ```
 > No banner with further infos sadly
 
+## Research
 
-## 2. Research
+### google
 
-### 2.1 google
 - `Samba 2.2.1a exploit`
 - `mod_ssl/2.8.4 exploit`
 
-### 2.2 searchspliot
+### searchspliot
+
 ```console
 searchsploit Samba 2.2.1a 
 ```
@@ -139,4 +155,5 @@ searchsploit Samba 2.2.1a
 ```console
 searchsploit mod_ssl 2.8.4
 ```
+
 ---
