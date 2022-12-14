@@ -1,7 +1,7 @@
 title: Off-Sec Note Book
 description: A documentation of assessments and exploits
 theme: just-the-docs
-baseurl: "/docs"
+baseurl: "/notes"
 color_scheme: my_scheme
 favicon: favicon.ico
 
