@@ -7,7 +7,8 @@ nav_order: 1
 {: .fs-9 }
 
 to my offensive security note book.
-Here I will document my assessments, reseach and exploits
+
+I use this notebook to document my assessments, reseach and exploits
 {: .fs-6 .fw-300 }
 
 ---
