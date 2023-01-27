@@ -15,7 +15,7 @@ Please feel free to look around and also try some out yourself.
 
 If you find any spelling mistakes, plain wrong info or anything else you disagree with please feel free to send me a PR.
 
-Also do not hesitate to contact me on any of the channels on my [profile page](globeprogger.github.io).
+Also do not hesitate to contact me on any of the channels on my [profile page](https://globeprogger.github.io).
 
 -- Marcus Jawo
 
