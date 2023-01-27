@@ -6,9 +6,15 @@ nav_order: 1
 # Welcome
 {: .fs-9 }
 
-to my offensive security note book.
-
-I use this notebook to document my assessments, reseach and exploits
+... to my offensive security note book.
 {: .fs-6 .fw-300 }
+
+I use this notebook to document my assessments, research and exploits. Please feel free to look around try some out yourself.
+
+If you find any spelling mistakes, plain wrong info or any other thing you disagree with please feel free to send me a PR.
+
+Also do not hesitate to contact me on any of the channels on my [profile](globeprogger.github.io).
+
+-- Marcus Jawo
 
 ---
